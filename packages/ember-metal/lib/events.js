@@ -33,8 +33,10 @@ var o_create = Ember.create,
 
 function indexOf(array, target, method) {
   var index = -1;
-  for (var i = 0, l = array.length; i < l; i += 3) {
-    if (target === array[i] && method === array[i+1]) { index = i; break; }
+  for (var i = array.length - 3 ; i >= 0; i -= 3) {
+      if (target === array[i] && method === array[i + 1]) {
+          index = i; break;
+      }
   }
   return index;
 }
